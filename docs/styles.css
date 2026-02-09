@@ -30,12 +30,12 @@ body {
 
 .bg {
   background:
-    radial-gradient(120% 120% at 10% 20%, rgba(0, 90, 255, 0.5), transparent 60%),
-    radial-gradient(120% 120% at 90% 10%, rgba(0, 200, 255, 0.4), transparent 60%),
-    radial-gradient(120% 120% at 20% 90%, rgba(0, 140, 220, 0.35), transparent 60%),
-    linear-gradient(120deg, #03142a, #041024, #020710);
-  filter: blur(8px) saturate(1.2);
-  animation: drift 12s ease-in-out infinite alternate;
+    radial-gradient(120% 120% at 10% 20%, rgba(0, 90, 255, 0.45), transparent 60%),
+    radial-gradient(120% 120% at 90% 10%, rgba(0, 200, 255, 0.35), transparent 60%),
+    radial-gradient(120% 120% at 20% 90%, rgba(0, 140, 220, 0.3), transparent 60%),
+    linear-gradient(120deg, #030409, #07102a);
+  filter: blur(6px) saturate(1.15);
+  animation: drift 10s ease-in-out infinite alternate;
 }
 
 .bg-noise {
@@ -72,17 +72,39 @@ body {
   padding: 0 24px;
 }
 
-.title {
-  font-family: "Y2K Brutalism", "Segoe UI", sans-serif;
-  font-size: clamp(48px, 8vw, 96px);
-  letter-spacing: 2px;
-  color: #ffffff;
-  text-transform: none;
+.splash {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
 }
 
-.motto {
+.splash-title {
+  font-family: "Y2K Brutalism", "Segoe UI", sans-serif;
+  font-size: clamp(52px, 9vw, 104px);
+  letter-spacing: 2px;
+  color: #ffffff;
+  position: relative;
+  text-shadow:
+    0 0 18px rgba(0, 180, 255, 0.4),
+    0 0 36px rgba(0, 180, 255, 0.35),
+    0 0 48px rgba(0, 180, 255, 0.25);
+}
+
+.splash-title::after {
+  content: "";
+  position: absolute;
+  inset: -8px -12px;
+  background: linear-gradient(90deg, rgba(0,167,255,0.15), rgba(0,255,220,0.18), rgba(0,167,255,0.12));
+  filter: blur(10px);
+  opacity: 0.55;
+  z-index: -1;
+}
+
+.splash-motto {
   font-size: clamp(14px, 1.6vw, 18px);
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   color: rgba(230, 240, 255, 0.8);
 }

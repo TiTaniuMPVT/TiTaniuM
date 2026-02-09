@@ -1,0 +1,50 @@
+name: Build macOS (Nuitka)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt nuitka
+
+      - name: Build app (Nuitka)
+        run: |
+          python -m nuitka --mode=app \
+            --enable-plugin=pyside6 \
+            --output-dir=build \
+            --output-filename=TiTaniuM \
+            --macos-app-icon=docs/assets/logo.png \
+            --include-data-file=styles.qss=styles.qss \
+            --include-data-dir=UIpngs=UIpngs \
+            --include-data-file=BG.mp4=BG.mp4 \
+            --include-data-file="Y2K Brutalism Typeface.otf=Y2K Brutalism Typeface.otf" \
+            --include-package=ui \
+            --include-package=crypto \
+            main.py
+
+      - name: Zip app
+        run: |
+          APP_PATH="build/TiTaniuM.app"
+          if [ ! -d "$APP_PATH" ]; then
+            APP_PATH="build/main.app"
+          fi
+          ditto -c -k --sequesterRsrc --keepParent "$APP_PATH" "TiTaniuM-mac.zip"
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: TiTaniuM-mac
+          path: TiTaniuM-mac.zip

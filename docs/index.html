@@ -4,157 +4,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>TiTaniuM</title>
-    <meta name="description" content="TiTaniuM is a modern, encrypted password vault with a clean UI, fast search, and secure local storage." />
+    <meta name="description" content="TiTaniuM is a local password manager with a lock encrypted by Argon2id + AES-GCM." />
     <link rel="icon" href="assets/logo.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-grid"></div>
-    <div class="bg-orb orb-a"></div>
-    <div class="bg-orb orb-b"></div>
+    <div class="bg"></div>
+    <div class="bg-noise"></div>
 
-    <header class="nav">
-      <div class="logo">
-        <img src="assets/logo.png" alt="TiTaniuM" />
-        <span>TiTaniuM</span>
+    <main class="hero">
+      <div class="title">TiTaniuM</div>
+      <div class="motto">Complete Sensitivity Control</div>
+      <div class="desc">
+        A local password manager with a lock encrypted by Argon2id + AES-GCM
       </div>
-      <nav class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#security">Security</a>
-        <a href="#download">Download</a>
-      </nav>
-      <a class="btn btn-primary" href="#download">Get TiTaniuM</a>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">Complete Sensitivity Control</p>
-          <h1>Clean. Fast. Encrypted.</h1>
-          <p class="lead">
-            TiTaniuM keeps your accounts organized with a focused UI, instant search,
-            and secure local vault encryption.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#download">Download for Windows</a>
-            <a class="btn btn-ghost" href="#features">See features</a>
-          </div>
-          <div class="meta">
-            <span>Version Alpha 0.1</span>
-            <span>Local vault, no cloud</span>
-          </div>
-        </div>
-        <div class="hero-card">
-          <div class="card-glow"></div>
-          <div class="app-preview">
-            <div class="preview-top">
-              <div class="dot"></div>
-              <div class="dot"></div>
-              <div class="dot"></div>
-            </div>
-            <div class="preview-body">
-              <div class="preview-title">TiTaniuM Vault</div>
-              <div class="preview-row">
-                <div class="preview-pill"></div>
-                <div class="preview-pill"></div>
-                <div class="preview-pill"></div>
-              </div>
-              <div class="preview-row">
-                <div class="preview-card"></div>
-                <div class="preview-card"></div>
-                <div class="preview-card"></div>
-              </div>
-              <div class="preview-row">
-                <div class="preview-line"></div>
-                <div class="preview-line"></div>
-              </div>
-            </div>
-          </div>
-          <div class="card-caption">UI preview</div>
-        </div>
-      </section>
-
-      <section id="features" class="section">
-        <h2>Features</h2>
-        <div class="grid three">
-          <div class="tile">
-            <h3>Instant Organization</h3>
-            <p>Categories, quick search, and clean rows make it easy to manage large vaults.</p>
-          </div>
-          <div class="tile">
-            <h3>Password Reveal</h3>
-            <p>Reveal per row or all at once. Copy actions stay fast and precise.</p>
-          </div>
-          <div class="tile">
-            <h3>CSV Import</h3>
-            <p>Import from common export formats and map to your categories.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="security" class="section">
-        <div class="split">
-          <div>
-            <h2>Security by design</h2>
-            <p>
-              TiTaniuM stores data locally and encrypts your vault with Argon2id and AES-GCM.
-              You keep control of your data and keys.
-            </p>
-            <ul class="list">
-              <li>Local encrypted vault file</li>
-              <li>Strong key derivation defaults</li>
-              <li>No cloud dependency</li>
-            </ul>
-          </div>
-          <div class="security-panel">
-            <div class="panel-badge">Encryption</div>
-            <div class="panel-code">
-              Argon2id + AES-GCM
-            </div>
-            <div class="panel-detail">Fast unlock, strong defense</div>
-          </div>
-        </div>
-      </section>
-
-      <section id="download" class="section download">
-        <h2>Download</h2>
-        <p class="lead">
-          Install TiTaniuM and start storing passwords safely. The browser extension is optional.
-          It only works while the app is running and unlocked.
-        </p>
-        <div class="download-card">
-          <div>
-            <div class="download-title">Windows Installer</div>
-            <div class="download-meta">Recommended for most users</div>
-          </div>
-          <a class="btn btn-primary" href="https://github.com/TiTaniuMPVT/TiTaniuM/releases/download/Alpha/TiTaniuM-Setup.exe">
-            Download Installer
-          </a>
-        </div>
-        <div class="download-note">
-          This site distributes the installer only. The source code is private.
-          Replace the download link with your Releases URL once published.
-        </div>
-      </section>
-
-      <section class="section">
-        <h2>Getting Started</h2>
-        <div class="steps">
-          <div class="step"><span>1</span>Install TiTaniuM</div>
-          <div class="step"><span>2</span>Create your master password</div>
-          <div class="step"><span>3</span>Add accounts or import CSV</div>
-        </div>
-      </section>
+      <a class="btn" href="https://github.com/TiTaniuMPVT/TiTaniuM/releases/download/Alpha/TiTaniuM-Setup.exe">
+        Download Installer
+      </a>
     </main>
-
-    <footer class="footer">
-      <div>TiTaniuM Alpha 0.1</div>
-      <div>Built for speed and control</div>
-    </footer>
-
-    <script src="app.js"></script>
   </body>
 </html>
